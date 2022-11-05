@@ -20,7 +20,8 @@ public class exercises {
 //        ex10(scan);
 //        ex11(scan);
 //        ex12(scan);
-        ex13(scan);
+//        ex13(scan);
+        ex14(scan);
 
     }
 
@@ -258,5 +259,26 @@ public class exercises {
             }
         }
         System.out.print("Common elements are: " + Arrays.toString(newArray.toArray()));
+    }
+
+    public static void ex14(Scanner scan) {
+        System.out.print("Enter the number of elements of the array has : ");
+        int arrsize = scan.nextInt();
+        int arr[] = new int[arrsize];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter element: ");
+            arr[i] = scan.nextInt();
+        }
+        ArrayList<Integer> newArray = new ArrayList<>(arr.length - 1);
+        for (int i = 0; i < arr.length - 1; i++) {
+            int sum = 0;
+            for (int j = i + 1; j < arr.length; j++) {
+                sum += arr[j];
+            }
+            if (arr[i] > sum) {
+                newArray.add(arr[i]);
+            }
+        }
+        System.out.print("new array is : " + Arrays.toString(newArray.toArray()));
     }
 }
